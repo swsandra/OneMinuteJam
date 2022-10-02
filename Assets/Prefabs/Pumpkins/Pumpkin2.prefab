@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2001624666236171337
+--- !u!1 &1961284055504182080
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4912921441775546974}
-  - component: {fileID: 2347279337858451128}
+  - component: {fileID: 5294608810892529084}
+  - component: {fileID: 8178381051440307080}
+  - component: {fileID: 6401108549626376708}
+  - component: {fileID: 4599960881923402405}
   m_Layer: 0
   m_Name: Pumpkin2
   m_TagString: Untagged
@@ -17,28 +19,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4912921441775546974
+--- !u!4 &5294608810892529084
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001624666236171337}
+  m_GameObject: {fileID: 1961284055504182080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.01, y: -0.11, z: 0}
+  m_LocalPosition: {x: -2.53, y: -0.71345663, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2347279337858451128
+--- !u!212 &8178381051440307080
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001624666236171337}
+  m_GameObject: {fileID: 1961284055504182080}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -757425061, guid: 871ea9e41ed7e11459758a3ecdaa3f83, type: 3}
+  m_Sprite: {fileID: 993023621, guid: 871ea9e41ed7e11459758a3ecdaa3f83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,3 +86,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6401108549626376708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961284055504182080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6181e4804a5e84d8c9c08b53777597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pumpkinType: 1
+  direction: 0
+  tile: {fileID: 0}
+  speed: 0
+  uncarvedSprite: {fileID: 993023621, guid: 871ea9e41ed7e11459758a3ecdaa3f83, type: 3}
+  unlitSprite: {fileID: -757425061, guid: 871ea9e41ed7e11459758a3ecdaa3f83, type: 3}
+  LitSprite: {fileID: -757425061, guid: 50c869da583365b4abf265a27ad6060c, type: 3}
+--- !u!58 &4599960881923402405
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961284055504182080}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00042891502, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.14729238
