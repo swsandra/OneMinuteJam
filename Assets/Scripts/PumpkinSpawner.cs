@@ -31,7 +31,7 @@ public class PumpkinSpawner : MonoBehaviour
             }
             // print("spawn type "+pumpkinType);
             go = Instantiate(pumpkin, transform.position, Quaternion.identity);
-            go.GetComponent<Pumpkin>().ChangePumpkinType(pumpkinType);
+            go.GetComponent<Pumpkin>().ChangePumpkinType(pumpkinType, false);
             go.GetComponent<Pumpkin>().direction = beltDirection;
             go.GetComponent<Pumpkin>().tile = tile;
         }

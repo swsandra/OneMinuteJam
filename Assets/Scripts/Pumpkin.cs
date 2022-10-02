@@ -22,6 +22,10 @@ public class Pumpkin : MonoBehaviour
     [SerializeField] Sprite unlitSprite;
     [SerializeField] Sprite LitSprite;
     [SerializeField] GameObject explosionPrefab;
+    [SerializeField] AudioClip cutSound;
+    [SerializeField] AudioClip lightSound;
+    [SerializeField] AudioClip wrongSound;
+    [SerializeField] AudioClip explosionSound;
 
     float leftLimit;
     float rightLimit;
@@ -48,14 +52,14 @@ public class Pumpkin : MonoBehaviour
         }
     }
 
-    public void ChangePumpkinType(PumpkinType newType){
+    public void ChangePumpkinType(PumpkinType newType, bool playSound = true){
         if (pumpkinType == newType) return;
-        if (pumpkinType == PumpkinType.Uncarved && newType == PumpkinType.Unlit){
-            // TODO: reproducir sonido
+        if (pumpkinType == PumpkinType.Uncarved && newType == PumpkinType.Unlit){ // Carve pumpkin
+            if (playSound) AudioSource.PlayClipAtPoint(cutSound, transform.position);
             spriteRenderer.sprite = unlitSprite;
             pumpkinType = PumpkinType.Unlit;
-        } else if (pumpkinType == PumpkinType.Unlit && newType == PumpkinType.Lit){
-            // TODO: reproducir sonido
+        } else if (pumpkinType == PumpkinType.Unlit && newType == PumpkinType.Lit){ // Lit pumpkin
+            if (playSound) AudioSource.PlayClipAtPoint(lightSound, transform.position);
             spriteRenderer.sprite = LitSprite;
             pumpkinType = PumpkinType.Lit;
         } else { // Wrong classification 
@@ -74,7 +78,7 @@ public class Pumpkin : MonoBehaviour
     }
 
     void WrongClassification(){
-        // TODO: reproducir sonido
+        AudioSource.PlayClipAtPoint(wrongSound, transform.position);
         spriteRenderer.color = new Color(.1f, .1f, .1f);
     }
 
@@ -84,7 +88,7 @@ public class Pumpkin : MonoBehaviour
             WrongClassification();
             return;
         }
-        // TODO: reproducir sonido
+        AudioSource.PlayClipAtPoint(explosionSound, transform.position);
         Destroy(gameObject, .1f);
         GameObject go = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         go.GetComponent<Explosion>().direction = direction;
@@ -92,4 +96,5 @@ public class Pumpkin : MonoBehaviour
         go.GetComponent<Explosion>().leftLimit = leftLimit;
         go.GetComponent<Explosion>().rightLimit = rightLimit;
     }
+
 }

@@ -107,6 +107,10 @@ MonoBehaviour:
   unlitSprite: {fileID: -525549462, guid: 871ea9e41ed7e11459758a3ecdaa3f83, type: 3}
   LitSprite: {fileID: -525549462, guid: 50c869da583365b4abf265a27ad6060c, type: 3}
   explosionPrefab: {fileID: 962807180242971625, guid: c2282a8d78e4df94983eac6b751baac6, type: 3}
+  cutSound: {fileID: 8300000, guid: b016d2f864e94a9418e775a9eb5a1b6b, type: 3}
+  lightSound: {fileID: 8300000, guid: 9393719ffd671e64f954eb80922d7301, type: 3}
+  wrongSound: {fileID: 8300000, guid: a925ef12bc422fa46a8e7f2d471c8144, type: 3}
+  explosionSound: {fileID: 8300000, guid: 0d00935d50732c143ad13a1ec42c3803, type: 3}
 --- !u!58 &8614693614257856794
 CircleCollider2D:
   m_ObjectHideFlags: 0
