@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    BoxCollider2D bottomBox;
+    bool canInteract = true;
+    [SerializeField] Transform actionPoint;
+    [SerializeField] float actionCooldown = 0.1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +17,41 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L)) {
-            bottomBox.enabled = true;
-            StartCoroutine(interactionCooldown());
+        if (canInteract) {
+            bool action = false;
+            if(Input.GetKeyDown(KeyCode.J)) {
+                Collider2D col = Physics2D.OverlapPoint(actionPoint.position);  // Check Collision
+                if (col) {
+                    // col.GetComponent<Pumpkin>.Carve();
+                    Debug.Log(col.name + " carved");
+                    action = true;
+                }
+            }
+            else if(Input.GetKeyDown(KeyCode.K)) {
+                Collider2D col = Physics2D.OverlapPoint(actionPoint.position);  // Check Collision
+                if (col) {
+                    // col.GetComponent<Pumpkin>.Lit();
+                    Debug.Log(col.name + " lit");
+                    action = true;
+                }
+            }
+            else if(Input.GetKeyDown(KeyCode.L)) {
+                Collider2D col = Physics2D.OverlapPoint(actionPoint.position);  // Check Collision
+                if (col) {
+                    // col.GetComponent<Pumpkin>.Explode();
+                    Debug.Log(col.name + " explode");
+                    action = true;
+                }
+            }
+            if (action) {
+                canInteract = false;
+                StartCoroutine(interactionCooldown());
+            }
         }
     }
 
     IEnumerator interactionCooldown() {
-        yield return new WaitForSeconds(0.1f);
-        bottomBox.enabled = false;
+        yield return new WaitForSeconds(actionCooldown);
+        canInteract = true;
     }
 }
