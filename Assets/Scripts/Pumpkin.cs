@@ -49,6 +49,7 @@ public class Pumpkin : MonoBehaviour
     }
 
     public void ChangePumpkinType(PumpkinType newType){
+        if (pumpkinType == newType) return;
         if (pumpkinType == PumpkinType.Uncarved && newType == PumpkinType.Unlit){
             // TODO: reproducir sonido
             spriteRenderer.sprite = unlitSprite;
