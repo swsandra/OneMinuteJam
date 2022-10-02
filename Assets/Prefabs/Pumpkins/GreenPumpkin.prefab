@@ -117,7 +117,9 @@ MonoBehaviour:
   pumpkinType: 0
   direction: 0
   tile: {fileID: 0}
+  interactable: 0
   speed: 0
-  uncarvedSprite: {fileID: 0}
-  unlitSprite: {fileID: 0}
-  LitSprite: {fileID: 0}
+  uncarvedSprite: {fileID: 67864477, guid: 871ea9e41ed7e11459758a3ecdaa3f83, type: 3}
+  unlitSprite: {fileID: 67864477, guid: 50c869da583365b4abf265a27ad6060c, type: 3}
+  LitSprite: {fileID: 67864477, guid: 50c869da583365b4abf265a27ad6060c, type: 3}
+  explosionPrefab: {fileID: 962807180242971625, guid: c2282a8d78e4df94983eac6b751baac6, type: 3}

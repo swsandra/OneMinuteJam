@@ -1303,7 +1303,7 @@ Tilemap:
       - {fileID: 679149094, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 73116562, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 1397503621, guid: 3b08306328109314988bc85b87e53d02, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 0, y: -1, z: 0}
@@ -1762,7 +1762,7 @@ GameObject:
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1652040812
 MonoBehaviour:
   m_ObjectHideFlags: 0
