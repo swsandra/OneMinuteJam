@@ -21,25 +21,25 @@ public class Player : MonoBehaviour
             bool action = false;
             if(Input.GetKeyDown(KeyCode.J)) {
                 Collider2D col = Physics2D.OverlapPoint(actionPoint.position);  // Check Collision
-                if (col) {
-                    // col.GetComponent<Pumpkin>.Carve();
-                    Debug.Log(col.name + " carved");
+                if (col && col.GetComponent<Pumpkin>().interactable) {
+                    col.GetComponent<Pumpkin>().Carve();
+                    col.GetComponent<Pumpkin>().interactable = false;
                     action = true;
                 }
             }
             else if(Input.GetKeyDown(KeyCode.K)) {
                 Collider2D col = Physics2D.OverlapPoint(actionPoint.position);  // Check Collision
-                if (col) {
-                    // col.GetComponent<Pumpkin>.Lit();
-                    Debug.Log(col.name + " lit");
+                if (col && col.GetComponent<Pumpkin>().interactable) {
+                    col.GetComponent<Pumpkin>().Lit();
+                    col.GetComponent<Pumpkin>().interactable = false;
                     action = true;
                 }
             }
             else if(Input.GetKeyDown(KeyCode.L)) {
                 Collider2D col = Physics2D.OverlapPoint(actionPoint.position);  // Check Collision
-                if (col) {
-                    // col.GetComponent<Pumpkin>.Explode();
-                    Debug.Log(col.name + " explode");
+                if (col && col.GetComponent<Pumpkin>().interactable) {
+                    col.GetComponent<Pumpkin>().Explode();
+                    col.GetComponent<Pumpkin>().interactable = false;
                     action = true;
                 }
             }
