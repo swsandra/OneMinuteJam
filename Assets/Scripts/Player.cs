@@ -19,7 +19,21 @@ public class Player : MonoBehaviour
     {
         if (canInteract) {
             bool action = false;
-            if(Input.GetKeyDown(KeyCode.J)) {
+            if (Input.GetAxisRaw("Vertical") > 0f) {
+                // Change sprite to back
+                GetComponent<Animator>().SetBool("facingDown", false);
+                Debug.Log(Input.GetAxisRaw("Vertical"));
+
+                // move actionPoint up
+            }
+            else if (Input.GetAxisRaw("Vertical") < 0f) {
+                // Change sprite to front
+                GetComponent<Animator>().SetBool("facingDown", true);
+                Debug.Log(Input.GetAxisRaw("Vertical"));
+                
+                // move actionPoint down
+            }
+            if (Input.GetKeyDown(KeyCode.J)) {
                 Collider2D col = Physics2D.OverlapPoint(actionPoint.position);  // Check Collision
                 if (col && col.GetComponent<Pumpkin>().interactable) {
                     col.GetComponent<Pumpkin>().Carve();
@@ -27,7 +41,7 @@ public class Player : MonoBehaviour
                     action = true;
                 }
             }
-            else if(Input.GetKeyDown(KeyCode.K)) {
+            else if (Input.GetKeyDown(KeyCode.K)) {
                 Collider2D col = Physics2D.OverlapPoint(actionPoint.position);  // Check Collision
                 if (col && col.GetComponent<Pumpkin>().interactable) {
                     col.GetComponent<Pumpkin>().Lit();
@@ -35,7 +49,7 @@ public class Player : MonoBehaviour
                     action = true;
                 }
             }
-            else if(Input.GetKeyDown(KeyCode.L)) {
+            else if (Input.GetKeyDown(KeyCode.L)) {
                 Collider2D col = Physics2D.OverlapPoint(actionPoint.position);  // Check Collision
                 if (col && col.GetComponent<Pumpkin>().interactable) {
                     col.GetComponent<Pumpkin>().Explode();

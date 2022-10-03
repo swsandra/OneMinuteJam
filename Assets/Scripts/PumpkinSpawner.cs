@@ -6,7 +6,7 @@ public class PumpkinSpawner : MonoBehaviour
 {
     [SerializeField] GameObject greenPumpkinPrefab;
     [SerializeField] GameObject[] orangePumpkinPrefabs;
-    public float spawnRate = 1;
+    public float spawnRate = 0.5357f;
     [SerializeField] float pumpkinSpeed = 1;
     Pumpkin.PumpkinType[] validTypes = {Pumpkin.PumpkinType.Green, Pumpkin.PumpkinType.Uncarved, Pumpkin.PumpkinType.Unlit};
     [SerializeField] Transform[] spawnPositions;
@@ -18,8 +18,9 @@ public class PumpkinSpawner : MonoBehaviour
     }
 
     IEnumerator SpawnPumpkin() {
+        yield return new WaitForSeconds(0.2f);
         while (true) {
-            yield return new WaitForSeconds(1/spawnRate);
+            yield return new WaitForSeconds(spawnRate);
             Pumpkin.PumpkinType pumpkinType = validTypes[Random.Range(0, validTypes.Length)];
             GameObject go;
             GameObject pumpkin;
