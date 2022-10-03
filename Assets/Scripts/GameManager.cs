@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] int combo = 0;
     [SerializeField] int comboMultiplier = 1;
     [SerializeField] int maxCombo = 0;
+    [SerializeField] AudioClip drumstick;
+    [SerializeField] AudioClip gameSong;
+
+    float beatTime = 0.5357f;
 
     public int Score {
         get => score;
@@ -65,13 +69,26 @@ public class GameManager : MonoBehaviour
 
     // Start is called before the first frame update
     private void Start() {
-        StartCoroutine(CountDownRoutine());
+        StartCoroutine(prepareToStart());
     }
 
     public void missPumpkin() {
         combo = 0;
         comboMultiplier = 1;
         missedPumpkins++;
+    }
+
+    IEnumerator prepareToStart() {
+        AudioSource.PlayClipAtPoint(drumstick, transform.position);
+        yield return new WaitForSeconds(beatTime);
+        AudioSource.PlayClipAtPoint(drumstick, transform.position);
+        yield return new WaitForSeconds(beatTime);
+        AudioSource.PlayClipAtPoint(drumstick, transform.position);
+        yield return new WaitForSeconds(beatTime);
+        AudioSource.PlayClipAtPoint(drumstick, transform.position);
+        yield return new WaitForSeconds(beatTime);
+        AudioSource.PlayClipAtPoint(gameSong, transform.position);
+        StartCoroutine(CountDownRoutine());
     }
 
     IEnumerator CountDownRoutine() {

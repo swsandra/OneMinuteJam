@@ -1094,8 +1094,8 @@ MonoBehaviour:
   - {fileID: 3445169683300666366, guid: 68ce6abe3533824479469ae3c29801bc, type: 3}
   - {fileID: 1961284055504182080, guid: a3880cf8ef070814eb2bfc659f571b12, type: 3}
   - {fileID: 2545013352819166525, guid: 80f643304d9c4e846b5b6cfe2943a4e7, type: 3}
-  spawnRate: 1
-  pumpkinSpeed: 1
+  spawnRate: 0.5357
+  pumpkinSpeed: 4
   spawnPositions:
   - {fileID: 1281311636}
 --- !u!4 &385123228
@@ -1667,6 +1667,8 @@ MonoBehaviour:
   combo: 0
   comboMultiplier: 1
   maxCombo: 0
+  drumstick: {fileID: 8300000, guid: 675f201d6587ad0418cb26ab96993a2d, type: 3}
+  gameSong: {fileID: 8300000, guid: 58aade80ffd9dc145af6240ff68b6bd5, type: 3}
 --- !u!4 &648696016
 Transform:
   m_ObjectHideFlags: 0
@@ -1675,7 +1677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648696013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.56771, y: 50.213573, z: -0.025756847}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
