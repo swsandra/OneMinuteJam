@@ -144,9 +144,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 22
-        width: 10
-        height: 10
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,7 +154,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81e716aabe44cf145b2d797ad6718943
+      spriteID: 4cce652143b277f42841b96d1dadb1f9
       internalID: 1819907831
       vertices: []
       indices: 
@@ -164,10 +164,10 @@ TextureImporter:
       name: gui_paper_animated_selection2_1
       rect:
         serializedVersion: 2
-        x: 22
-        y: 22
-        width: 10
-        height: 10
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,7 +175,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 051bde132a867684681c40355df9be0a
+      spriteID: 6c0f2759175e06a4288a45de6a3520b0
       internalID: -1517562167
       vertices: []
       indices: 
@@ -185,10 +185,10 @@ TextureImporter:
       name: gui_paper_animated_selection2_2
       rect:
         serializedVersion: 2
-        x: 33
-        y: 21
-        width: 10
-        height: 10
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,7 +196,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c997327e30e20d640910e1ff6e32af12
+      spriteID: 6954342a49b72b144889812825548308
       internalID: -848282127
       vertices: []
       indices: 
@@ -206,10 +206,10 @@ TextureImporter:
       name: gui_paper_animated_selection2_3
       rect:
         serializedVersion: 2
-        x: 53
-        y: 21
-        width: 10
-        height: 10
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,260 +217,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8771bc25f55fc9546ba4a7b9773dc5fd
+      spriteID: d8f02d22ebbc149449402b298ad259ca
       internalID: 1473225534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gui_paper_animated_selection2_4
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 20
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 880d3a7a929718742891e0d0dce29e05
-      internalID: -1750362418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gui_paper_animated_selection2_5
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 20
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf231bbaab6d4fb41a0b97921af94580
-      internalID: 1545993665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gui_paper_animated_selection2_6
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 21
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca8e9f9b44314a34a8614326097e8876
-      internalID: 1103912314
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gui_paper_animated_selection2_7
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 21
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ed5201035938b64aa060e8fca935948
-      internalID: 1268614325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gui_paper_animated_selection2_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a92b4e9780f9e0499d3795386baec38
-      internalID: -912728129
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gui_paper_animated_selection2_9
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2de9591c061d6c419ebab05a89c7ff3
-      internalID: -216716032
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gui_paper_animated_selection2_10
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 1
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 749dee94a9a7e2b4b87cde889f520414
-      internalID: 898933815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gui_paper_animated_selection2_11
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 1
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2905dcdaa202de429278213055c48b5
-      internalID: 892241895
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gui_paper_animated_selection2_12
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 2
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9924766d76167b146b2ba285b81b928e
-      internalID: -1859857641
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gui_paper_animated_selection2_13
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 2
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 155099208fa05e640aba8bfd7e3b9078
-      internalID: -892288150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gui_paper_animated_selection2_14
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 1
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5602b94da1c15da4a94b194e184e9fda
-      internalID: 687401248
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gui_paper_animated_selection2_15
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 1
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d47e5e86653f17244bd6be3250d60b9e
-      internalID: 360684766
       vertices: []
       indices: 
       edges: []
@@ -486,22 +234,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gui_paper_animated_selection2_6: 1103912314
-      gui_paper_animated_selection2_5: 1545993665
-      gui_paper_animated_selection2_9: -216716032
       gui_paper_animated_selection2_1: -1517562167
-      gui_paper_animated_selection2_11: 892241895
-      gui_paper_animated_selection2_8: -912728129
-      gui_paper_animated_selection2_15: 360684766
-      gui_paper_animated_selection2_13: -892288150
       gui_paper_animated_selection2_2: -848282127
       gui_paper_animated_selection2_3: 1473225534
-      gui_paper_animated_selection2_7: 1268614325
-      gui_paper_animated_selection2_12: -1859857641
       gui_paper_animated_selection2_0: 1819907831
-      gui_paper_animated_selection2_10: 898933815
-      gui_paper_animated_selection2_14: 687401248
-      gui_paper_animated_selection2_4: -1750362418
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
