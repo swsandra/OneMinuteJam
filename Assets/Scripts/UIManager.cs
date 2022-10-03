@@ -15,8 +15,8 @@ public class UIManager : MonoBehaviour
 
     [Header("MultiplierUI")]
     [SerializeField] TMP_Text multiplierText;
-    [SerializeField] int multiplierInitialSize = 12;
-    [SerializeField] int multiplierIncrement = 12;
+    [SerializeField] int multiplierInitialSize;
+    [SerializeField] int multiplierIncrement;
     float multiplierH;
     float multiplierS;
     float multiplierV;
