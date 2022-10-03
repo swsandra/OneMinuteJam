@@ -17,11 +17,20 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text multiplierText;
     [SerializeField] int multiplierInitialSize = 12;
     [SerializeField] int multiplierIncrement = 12;
+    float multiplierH;
+    float multiplierS;
+    float multiplierV;
+
+
 
     private void Awake() {
         if (instance == null) {
             instance = this;
         }
+    }
+
+    private void Start() {
+        Color.RGBToHSV(multiplierText.outlineColor, out multiplierH, out multiplierS, out multiplierV);
     }
 
     public void UpdateUITime(int newTime) {
@@ -34,7 +43,8 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUIMultiplier(int newMultiplier) {
         multiplierText.text = "x" + newMultiplier.ToString();
-        multiplierText.fontSize = multiplierInitialSize + newMultiplier * multiplierIncrement;
+        multiplierText.fontSize = multiplierInitialSize + (newMultiplier-1) * multiplierIncrement;
+        multiplierText.color = Color.HSVToRGB(multiplierH, (newMultiplier-1) * (multiplierS/4), multiplierV);
     }
 
 }
