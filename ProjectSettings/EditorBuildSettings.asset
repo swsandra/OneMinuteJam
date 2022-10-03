@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HardMode.unity
     guid: 6b40f2fe77f38e04496a72683080e2fd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameOver.unity
     guid: 71bbbfd22f7653240a2fc440a8a2ff58
   m_configObjects: {}

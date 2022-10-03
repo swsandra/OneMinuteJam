@@ -1146,7 +1146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionPoint: {fileID: 1161091049}
-  actionCooldown: 0.1
+  hardMode: 0
+  actionPointDown: -0.2
+  actionPointUp: 0.3
 --- !u!1 &523700119
 GameObject:
   m_ObjectHideFlags: 0
