@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class PumpkinSpawner : MonoBehaviour
 {
     [SerializeField] GameObject greenPumpkinPrefab;
     [SerializeField] GameObject[] orangePumpkinPrefabs;
-    float spawnRate;
+    public float spawnRate = 1;
+    [SerializeField] float pumpkinSpeed = 1;
     Pumpkin.PumpkinType[] validTypes = {Pumpkin.PumpkinType.Green, Pumpkin.PumpkinType.Uncarved, Pumpkin.PumpkinType.Unlit};
-    [SerializeField] AnimatedTile[] tiles;
     [SerializeField] Transform[] spawnPositions;
     int[] beltDirection = {-1, 1};      // 1 (right), or -1 (left)
 
@@ -20,7 +19,6 @@ public class PumpkinSpawner : MonoBehaviour
 
     IEnumerator SpawnPumpkin() {
         while (true) {
-            spawnRate = tiles[0].m_MinSpeed/2; // Belt speed can change
             yield return new WaitForSeconds(1/spawnRate);
             Pumpkin.PumpkinType pumpkinType = validTypes[Random.Range(0, validTypes.Length)];
             GameObject go;
@@ -36,7 +34,7 @@ public class PumpkinSpawner : MonoBehaviour
             go = Instantiate(pumpkin, spawnPositions[randomSpawn].position, Quaternion.identity);
             go.GetComponent<Pumpkin>().ChangePumpkinType(pumpkinType, false);
             go.GetComponent<Pumpkin>().direction = beltDirection[randomSpawn];
-            go.GetComponent<Pumpkin>().tile = tiles[randomSpawn];
+            go.GetComponent<Pumpkin>().speed = pumpkinSpeed;
         }
     }
 }

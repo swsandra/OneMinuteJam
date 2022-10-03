@@ -1634,7 +1634,7 @@ Tilemap:
       - {fileID: -16818409, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 891359847, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 601586661, guid: 3b08306328109314988bc85b87e53d02, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -6, y: -1, z: 0}
@@ -1690,7 +1690,7 @@ Tilemap:
       - {fileID: 679149094, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 73116562, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 1397503621, guid: 3b08306328109314988bc85b87e53d02, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -2, y: -1, z: 0}
@@ -2572,9 +2572,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 60
-  carvedPumpkins: 0
-  litPumpkins: 0
-  explodedPumpkins: 0
+  missedPumpkins: 0
+  combo: 0
+  comboMultiplier: 1
+  maxCombo: 0
 --- !u!4 &1305829704
 Transform:
   m_ObjectHideFlags: 0
@@ -2655,9 +2656,8 @@ MonoBehaviour:
   - {fileID: 3445169683300666366, guid: 68ce6abe3533824479469ae3c29801bc, type: 3}
   - {fileID: 1961284055504182080, guid: a3880cf8ef070814eb2bfc659f571b12, type: 3}
   - {fileID: 2545013352819166525, guid: 80f643304d9c4e846b5b6cfe2943a4e7, type: 3}
-  tiles:
-  - {fileID: 11400000, guid: 92f30087e8b913a42aac0ae3625012cf, type: 2}
-  - {fileID: 11400000, guid: 5653ab5c1cf4fb14987d80c221f64443, type: 2}
+  spawnRate: 1
+  pumpkinSpeed: 1
   spawnPositions:
   - {fileID: 1168168105}
   - {fileID: 1620720250}
