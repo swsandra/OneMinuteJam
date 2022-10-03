@@ -1414,6 +1414,9 @@ MonoBehaviour:
   maxCombo: 0
   drumstick: {fileID: 8300000, guid: 675f201d6587ad0418cb26ab96993a2d, type: 3}
   gameSong: {fileID: 8300000, guid: 58aade80ffd9dc145af6240ff68b6bd5, type: 3}
+  gameOverScreen: {fileID: 0}
+  gameUICanvas: {fileID: 0}
+  pumpkinSpawner: {fileID: 0}
 --- !u!4 &280148281
 Transform:
   m_ObjectHideFlags: 0
@@ -3742,7 +3745,7 @@ Tilemap:
       - {fileID: 679149094, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 73116562, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 1397503621, guid: 3b08306328109314988bc85b87e53d02, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -1, y: -1, z: 0}
@@ -3770,7 +3773,7 @@ Tilemap:
       - {fileID: 679149094, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 73116562, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 1397503621, guid: 3b08306328109314988bc85b87e53d02, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 1, y: -1, z: 0}
@@ -4246,8 +4249,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280702184
-  m_fontColor: {r: 0.91, g: 0.33090907, b: 0.14969696, a: 1}
+    rgba: 4293454056
+  m_fontColor: {r: 0.9098039, g: 0.9098039, b: 0.9098039, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7388,6 +7391,12 @@ MonoBehaviour:
   multiplierText: {fileID: 862301074}
   multiplierInitialSize: 100
   multiplierIncrement: 40
+  finalScoreText: {fileID: 0}
+  carvedText: {fileID: 0}
+  litText: {fileID: 0}
+  explodedText: {fileID: 0}
+  missedText: {fileID: 0}
+  maxComboText: {fileID: 0}
 --- !u!4 &2056793014
 Transform:
   m_ObjectHideFlags: 0
