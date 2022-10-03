@@ -53,28 +53,38 @@ public class Pumpkin : MonoBehaviour
     }
 
     public void ChangePumpkinType(PumpkinType newType, bool playSound = true){
-        if (pumpkinType == newType) return;
+        if (pumpkinType == newType && !playSound) return;   // Instantiation
         if (pumpkinType == PumpkinType.Uncarved && newType == PumpkinType.Unlit){ // Carve pumpkin
-            if (playSound) AudioSource.PlayClipAtPoint(cutSound, transform.position);
             spriteRenderer.sprite = unlitSprite;
             pumpkinType = PumpkinType.Unlit;
         } else if (pumpkinType == PumpkinType.Unlit && newType == PumpkinType.Lit){ // Lit pumpkin
-            if (playSound) AudioSource.PlayClipAtPoint(lightSound, transform.position);
             spriteRenderer.sprite = LitSprite;
             pumpkinType = PumpkinType.Lit;
-        } else { // Wrong classification 
-            WrongClassification();
         }
     }
 
     [ContextMenu("Carve")]
     public void Carve(){
-        ChangePumpkinType(PumpkinType.Unlit);
+        if (pumpkinType != PumpkinType.Uncarved) {
+            WrongClassification();
+        }
+        else {
+            AudioSource.PlayClipAtPoint(cutSound, transform.position);
+            ChangePumpkinType(PumpkinType.Unlit);
+            GameManager.instance.carvedPumpkins++;
+        }
     }
 
     [ContextMenu("Lit")]
     public void Lit(){
-        ChangePumpkinType(PumpkinType.Lit);
+        if (pumpkinType != PumpkinType.Unlit) {
+            WrongClassification();
+        }
+        else {
+            AudioSource.PlayClipAtPoint(lightSound, transform.position);
+            ChangePumpkinType(PumpkinType.Lit);
+            GameManager.instance.litPumpkins++;
+        }
     }
 
     void WrongClassification(){
@@ -95,6 +105,7 @@ public class Pumpkin : MonoBehaviour
         go.GetComponent<Explosion>().speed = speed;
         go.GetComponent<Explosion>().leftLimit = leftLimit;
         go.GetComponent<Explosion>().rightLimit = rightLimit;
+        GameManager.instance.explodedPumpkins++;
     }
 
 }

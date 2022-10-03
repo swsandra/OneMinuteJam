@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
     [Header("ClockUI")]
     [SerializeField] Transform clockHand;
 
+    [Header("ScoreUI")]
+    [SerializeField] TMP_Text scoreText;
+
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -20,5 +23,8 @@ public class UIManager : MonoBehaviour
         clockHand.eulerAngles = new Vector3(0,0, newTime * 6);
     }
 
+    public void UpdateUIScore(int newScore) {
+        scoreText.text = newScore.ToString();
+    }
 
 }
