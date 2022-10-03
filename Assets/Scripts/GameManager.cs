@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
     }
 
     IEnumerator prepareToStart() {
+        yield return new WaitForSeconds(1f);
         AudioSource.PlayClipAtPoint(drumstick, transform.position);
         yield return new WaitForSeconds(beatTime);
         AudioSource.PlayClipAtPoint(drumstick, transform.position);

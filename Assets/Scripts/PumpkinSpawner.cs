@@ -18,7 +18,7 @@ public class PumpkinSpawner : MonoBehaviour
     }
 
     IEnumerator SpawnPumpkin() {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1.2f);
         while (true) {
             yield return new WaitForSeconds(spawnRate);
             Pumpkin.PumpkinType pumpkinType = validTypes[Random.Range(0, validTypes.Length)];
