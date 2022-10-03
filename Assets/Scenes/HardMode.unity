@@ -218,7 +218,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 13
-      m_TileSpriteIndex: 13
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -248,7 +248,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -323,14 +323,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: -1110349257, guid: 9c46b458905661544ae3d49a70bbe2ca, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1199609540, guid: 9c46b458905661544ae3d49a70bbe2ca, type: 3}
   - m_RefCount: 1
+    m_Data: {fileID: -1110349257, guid: 9c46b458905661544ae3d49a70bbe2ca, type: 3}
+  - m_RefCount: 1
     m_Data: {fileID: 1247438234, guid: 9c46b458905661544ae3d49a70bbe2ca, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 1101845170, guid: 9c46b458905661544ae3d49a70bbe2ca, type: 3}
   - m_RefCount: 1
@@ -1847,7 +1847,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionPoint: {fileID: 854388770}
-  actionCooldown: 0.1
+  hardMode: 1
+  actionPointDown: -0.2
+  actionPointUp: 0.3
 --- !u!212 &710444952
 SpriteRenderer:
   m_ObjectHideFlags: 0

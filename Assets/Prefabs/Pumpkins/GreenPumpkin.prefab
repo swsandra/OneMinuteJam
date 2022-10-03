@@ -122,7 +122,7 @@ MonoBehaviour:
   unlitSprite: {fileID: 67864477, guid: 50c869da583365b4abf265a27ad6060c, type: 3}
   LitSprite: {fileID: 67864477, guid: 50c869da583365b4abf265a27ad6060c, type: 3}
   explosionPrefab: {fileID: 962807180242971625, guid: c2282a8d78e4df94983eac6b751baac6, type: 3}
-  cutSound: {fileID: 8300000, guid: b016d2f864e94a9418e775a9eb5a1b6b, type: 3}
+  cutSound: {fileID: 8300000, guid: 2621512df7398c94ca6267820d96b340, type: 3}
   lightSound: {fileID: 8300000, guid: 9393719ffd671e64f954eb80922d7301, type: 3}
   wrongSound: {fileID: 8300000, guid: a925ef12bc422fa46a8e7f2d471c8144, type: 3}
   explosionSound: {fileID: 8300000, guid: 0d00935d50732c143ad13a1ec42c3803, type: 3}
