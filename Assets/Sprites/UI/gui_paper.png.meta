@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -3490,7 +3490,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       gui_paper_75: -1188145563
-      gui_paper_114: -33978102
+      gui_paper_139: 116682988
       gui_paper_51: 251040997
       gui_paper_79: 2140864321
       gui_paper_92: 1893359676
@@ -3501,8 +3501,6 @@ TextureImporter:
       gui_paper_82: 786911408
       gui_paper_85: 64923480
       gui_paper_3: -200453357
-      gui_paper_123: -902773567
-      gui_paper_137: 244127602
       gui_paper_147: 2127964275
       gui_paper_105: 177784356
       gui_paper_14: -2055088936
@@ -3510,10 +3508,9 @@ TextureImporter:
       gui_paper_88: -462733327
       gui_paper_34: -204440585
       gui_paper_89: -961787341
-      gui_paper_140: -45624698
       gui_paper_69: -1724552154
       gui_paper_77: -855583641
-      gui_paper_139: 116682988
+      gui_paper_114: -33978102
       gui_paper_153: 1651246576
       gui_paper_29: -2102345516
       gui_paper_112: 954349301
@@ -3532,6 +3529,7 @@ TextureImporter:
       gui_paper_124: -174857169
       gui_paper_54: -952306874
       gui_paper_122: -669611384
+      gui_paper_123: -902773567
       gui_paper_150: -2007051123
       gui_paper_157: -1131589913
       gui_paper_58: -86246417
@@ -3571,18 +3569,18 @@ TextureImporter:
       gui_paper_28: 12030726
       gui_paper_130: 1197090035
       gui_paper_45: 753395451
-      gui_paper_7: 1317411907
-      gui_paper_24: -1261427243
       gui_paper_63: 1489169385
+      gui_paper_7: 1317411907
       gui_paper_15: 1971865201
       gui_paper_78: -96107198
       gui_paper_144: -1339192214
+      gui_paper_24: -1261427243
       gui_paper_21: -747644181
       gui_paper_57: 1619401947
-      gui_paper_110: 1809624129
       gui_paper_19: 1273026903
-      gui_paper_121: -1996276795
+      gui_paper_110: 1809624129
       gui_paper_141: -1121039338
+      gui_paper_121: -1996276795
       gui_paper_95: -679662623
       gui_paper_10: 1127851659
       gui_paper_96: -600045389
@@ -3615,13 +3613,15 @@ TextureImporter:
       gui_paper_27: 768587587
       gui_paper_104: -499612395
       gui_paper_81: 583919341
-      gui_paper_97: -1743042428
+      gui_paper_137: 244127602
+      gui_paper_140: -45624698
       gui_paper_20: 1901445071
-      gui_paper_32: -400092556
-      gui_paper_35: -971142155
+      gui_paper_97: -1743042428
       gui_paper_60: -999918006
+      gui_paper_32: -400092556
       gui_paper_4: -707391218
       gui_paper_25: -1911981699
+      gui_paper_35: -971142155
       gui_paper_72: -1228964586
       gui_paper_91: -2087034255
       gui_paper_98: -648757214
@@ -3646,8 +3646,8 @@ TextureImporter:
       gui_paper_119: 848988899
       gui_paper_66: -547426643
       gui_paper_65: 731611857
-      gui_paper_43: 331661693
       gui_paper_158: 2000645273
+      gui_paper_43: 331661693
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
