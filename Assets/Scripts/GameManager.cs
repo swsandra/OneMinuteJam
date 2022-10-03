@@ -106,9 +106,9 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1);
             Time--;
         }
-        // TODO: poner animacion de llorando y explotando, luego hacer lo de abajo
         UIManager.instance.UpdateGameOverScreenScore(score, carvedPumpkins, litPumpkins, explodedPumpkins, missedPumpkins, maxCombo);
         pumpkinSpawner.SetActive(false);
+        // TODO: poner animacion de llorando y explotando, luego hacer lo de abajo
         gameUICanvas.SetActive(false);
         gameOverScreen.SetActive(true);
     }
