@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     bool canInteract = true;
     [SerializeField] Transform actionPoint;
-    [SerializeField] float actionCooldown = 0.1f;
+    [SerializeField] float actionCooldown = 0.5f;
 
     // Start is called before the first frame update
     void Start()
