@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class Pumpkin : MonoBehaviour
 {
@@ -14,10 +13,9 @@ public class Pumpkin : MonoBehaviour
 
     public PumpkinType pumpkinType;
     public int direction; // Either 1 (right), or -1 (left)
-    public AnimatedTile tile;
     public bool interactable;
 
-    [SerializeField] float speed;
+    public float speed;
     [SerializeField] Sprite uncarvedSprite;
     [SerializeField] Sprite unlitSprite;
     [SerializeField] Sprite LitSprite;
@@ -29,6 +27,9 @@ public class Pumpkin : MonoBehaviour
 
     float leftLimit;
     float rightLimit;
+    float rightMiss = 0.5f;
+    float leftMiss = -0.5f;
+    bool missed = false;
 
     SpriteRenderer spriteRenderer;
 
@@ -37,7 +38,6 @@ public class Pumpkin : MonoBehaviour
     }
 
     private void Start() {
-        speed = tile.m_MinSpeed/2;
         leftLimit = Camera.main.ViewportToWorldPoint(new Vector3(0f, 0f, 0f)).x;
         rightLimit = Camera.main.ViewportToWorldPoint(new Vector3(1.0f, 0f, 0f)).x;
         interactable = true;
@@ -49,6 +49,11 @@ public class Pumpkin : MonoBehaviour
         bool outOfScreen = direction > 0 ? transform.position.x > rightLimit : transform.position.x < leftLimit;
         if (outOfScreen){
             Destroy(gameObject, .1f);
+        }
+        bool missLimit = direction > 0 ? transform.position.x > rightMiss : transform.position.x < leftMiss;
+        if (!missed && missLimit && interactable) {
+            GameManager.instance.missPumpkin();
+            missed = true;
         }
     }
 
@@ -71,7 +76,7 @@ public class Pumpkin : MonoBehaviour
         else {
             AudioSource.PlayClipAtPoint(cutSound, transform.position);
             ChangePumpkinType(PumpkinType.Unlit);
-            GameManager.instance.carvedPumpkins++;
+            GameManager.instance.CarvedPumpkins++;
         }
     }
 
@@ -83,13 +88,8 @@ public class Pumpkin : MonoBehaviour
         else {
             AudioSource.PlayClipAtPoint(lightSound, transform.position);
             ChangePumpkinType(PumpkinType.Lit);
-            GameManager.instance.litPumpkins++;
+            GameManager.instance.LitPumpkins++;
         }
-    }
-
-    void WrongClassification(){
-        AudioSource.PlayClipAtPoint(wrongSound, transform.position);
-        spriteRenderer.color = new Color(.1f, .1f, .1f);
     }
 
     [ContextMenu("Explode")]
@@ -105,7 +105,13 @@ public class Pumpkin : MonoBehaviour
         go.GetComponent<Explosion>().speed = speed;
         go.GetComponent<Explosion>().leftLimit = leftLimit;
         go.GetComponent<Explosion>().rightLimit = rightLimit;
-        GameManager.instance.explodedPumpkins++;
+        GameManager.instance.ExplodedPumpkins++;
+    }
+
+    void WrongClassification(){
+        GameManager.instance.missPumpkin();
+        AudioSource.PlayClipAtPoint(wrongSound, transform.position);
+        spriteRenderer.color = new Color(.1f, .1f, .1f);
     }
 
 }
