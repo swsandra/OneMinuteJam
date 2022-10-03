@@ -28,9 +28,16 @@ public class GameManager : MonoBehaviour
             maxCombo = Mathf.Max(combo, maxCombo);
             score = value;
             if (combo % 5 == 0) {
-                comboMultiplier = Mathf.Clamp(comboMultiplier + 1, 1, 5);
+                ComboMultiplier = Mathf.Clamp(ComboMultiplier + 1, 1, 5);
             }
             UIManager.instance.UpdateUIScore(score);
+        }
+    }
+    public int ComboMultiplier {
+        get => comboMultiplier;
+        set {
+            comboMultiplier = value;
+            UIManager.instance.UpdateUIMultiplier(comboMultiplier);
         }
     }
     public int Time {
@@ -44,21 +51,21 @@ public class GameManager : MonoBehaviour
         get => carvedPumpkins;
         set {
             carvedPumpkins = value;
-            Score += comboMultiplier;
+            Score += ComboMultiplier;
         }
     }
     public int LitPumpkins {
         get => litPumpkins;
         set {
             litPumpkins = value;
-            Score += comboMultiplier;
+            Score += ComboMultiplier;
         }
     }
     public int ExplodedPumpkins {
         get => explodedPumpkins;
         set {
             explodedPumpkins = value;
-            Score += comboMultiplier;
+            Score += ComboMultiplier;
         }
     }
     private void Awake() {
@@ -74,7 +81,7 @@ public class GameManager : MonoBehaviour
 
     public void missPumpkin() {
         combo = 0;
-        comboMultiplier = 1;
+        ComboMultiplier = 1;
         missedPumpkins++;
     }
 
