@@ -13,6 +13,11 @@ public class UIManager : MonoBehaviour
     [Header("ScoreUI")]
     [SerializeField] TMP_Text scoreText;
 
+    [Header("MultiplierUI")]
+    [SerializeField] TMP_Text multiplierText;
+    [SerializeField] int multiplierInitialSize = 12;
+    [SerializeField] int multiplierIncrement = 12;
+
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -25,6 +30,11 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUIScore(int newScore) {
         scoreText.text = newScore.ToString();
+    }
+
+    public void UpdateUIMultiplier(int newMultiplier) {
+        multiplierText.text = "x" + newMultiplier.ToString();
+        multiplierText.fontSize = multiplierInitialSize + newMultiplier * multiplierIncrement;
     }
 
 }
