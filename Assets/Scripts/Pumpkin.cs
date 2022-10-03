@@ -53,7 +53,7 @@ public class Pumpkin : MonoBehaviour
     }
 
     public void ChangePumpkinType(PumpkinType newType, bool playSound = true){
-        if (pumpkinType == newType) return;
+        if (pumpkinType == newType && !playSound) return; // Instantiation
         if (pumpkinType == PumpkinType.Uncarved && newType == PumpkinType.Unlit){ // Carve pumpkin
             if (playSound) AudioSource.PlayClipAtPoint(cutSound, transform.position);
             spriteRenderer.sprite = unlitSprite;
