@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] int maxCombo = 0;
     [SerializeField] AudioClip drumstick;
     [SerializeField] AudioClip gameSong;
+    [SerializeField] GameObject gameOverScreen;
+    [SerializeField] GameObject gameUICanvas;
+    [SerializeField] GameObject pumpkinSpawner;
 
     float beatTime = 0.5357f;
 
@@ -103,7 +106,10 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1);
             Time--;
         }
-
-        Debug.Log("se acabo");
+        // TODO: poner animacion de llorando y explotando, luego hacer lo de abajo
+        UIManager.instance.UpdateGameOverScreenScore(score, carvedPumpkins, litPumpkins, explodedPumpkins, missedPumpkins, maxCombo);
+        pumpkinSpawner.SetActive(false);
+        gameUICanvas.SetActive(false);
+        gameOverScreen.SetActive(true);
     }
 }

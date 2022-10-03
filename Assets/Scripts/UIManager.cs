@@ -23,6 +23,14 @@ public class UIManager : MonoBehaviour
 
 
 
+    [Header("Game Over UI")]
+    [SerializeField] TMP_Text finalScoreText;
+    [SerializeField] TMP_Text carvedText;
+    [SerializeField] TMP_Text litText;
+    [SerializeField] TMP_Text explodedText;
+    [SerializeField] TMP_Text missedText;
+    [SerializeField] TMP_Text maxComboText;
+
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -45,6 +53,15 @@ public class UIManager : MonoBehaviour
         multiplierText.text = "x" + newMultiplier.ToString();
         multiplierText.fontSize = multiplierInitialSize + (newMultiplier-1) * multiplierIncrement;
         multiplierText.color = Color.HSVToRGB(multiplierH, (newMultiplier-1) * (multiplierS/4), multiplierV);
+    }
+
+    public void UpdateGameOverScreenScore(int finalScore, int carvedPumpkins, int litPumpkins, int explodedPumpkins, int missedPumpkins, int maxCombo) {
+        finalScoreText.text = finalScore.ToString();
+        carvedText.text = carvedPumpkins.ToString();
+        litText.text = litPumpkins.ToString();
+        explodedText.text = explodedPumpkins.ToString();
+        missedText.text = missedPumpkins.ToString();
+        maxComboText.text = maxCombo.ToString();
     }
 
 }
