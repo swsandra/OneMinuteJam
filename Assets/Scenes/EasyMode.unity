@@ -1414,9 +1414,9 @@ MonoBehaviour:
   maxCombo: 0
   drumstick: {fileID: 8300000, guid: 675f201d6587ad0418cb26ab96993a2d, type: 3}
   gameSong: {fileID: 8300000, guid: 58aade80ffd9dc145af6240ff68b6bd5, type: 3}
-  gameOverScreen: {fileID: 0}
-  gameUICanvas: {fileID: 0}
-  pumpkinSpawner: {fileID: 0}
+  gameOverScreen: {fileID: 1176071918}
+  gameUICanvas: {fileID: 1210878063}
+  pumpkinSpawner: {fileID: 1329178869}
 --- !u!4 &280148281
 Transform:
   m_ObjectHideFlags: 0
@@ -3745,7 +3745,7 @@ Tilemap:
       - {fileID: 679149094, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 73116562, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 1397503621, guid: 3b08306328109314988bc85b87e53d02, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -1, y: -1, z: 0}
@@ -3773,7 +3773,7 @@ Tilemap:
       - {fileID: 679149094, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 73116562, guid: 3b08306328109314988bc85b87e53d02, type: 3}
       - {fileID: 1397503621, guid: 3b08306328109314988bc85b87e53d02, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 1, y: -1, z: 0}
@@ -4718,7 +4718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 130, y: 161}
+  m_AnchoredPosition: {x: 336, y: 161}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &968152351
@@ -6749,7 +6749,7 @@ Transform:
   m_GameObject: {fileID: 1993168108}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1817835214}
@@ -7391,12 +7391,12 @@ MonoBehaviour:
   multiplierText: {fileID: 862301074}
   multiplierInitialSize: 100
   multiplierIncrement: 40
-  finalScoreText: {fileID: 0}
-  carvedText: {fileID: 0}
-  litText: {fileID: 0}
-  explodedText: {fileID: 0}
-  missedText: {fileID: 0}
-  maxComboText: {fileID: 0}
+  finalScoreText: {fileID: 23600373}
+  carvedText: {fileID: 71938971}
+  litText: {fileID: 574172584}
+  explodedText: {fileID: 585827646}
+  missedText: {fileID: 1471555140}
+  maxComboText: {fileID: 1325595071}
 --- !u!4 &2056793014
 Transform:
   m_ObjectHideFlags: 0
