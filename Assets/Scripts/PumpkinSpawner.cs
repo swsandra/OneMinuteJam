@@ -7,19 +7,20 @@ public class PumpkinSpawner : MonoBehaviour
 {
     [SerializeField] GameObject greenPumpkinPrefab;
     [SerializeField] GameObject[] orangePumpkinPrefabs;
-    [SerializeField] int beltDirection; // Either 1 (right), or -1 (left)
-    [SerializeField] AnimatedTile tile;
     float spawnRate;
     Pumpkin.PumpkinType[] validTypes = {Pumpkin.PumpkinType.Green, Pumpkin.PumpkinType.Uncarved, Pumpkin.PumpkinType.Unlit};
+    [SerializeField] AnimatedTile[] tiles;
+    [SerializeField] Transform[] spawnPositions;
+    int[] beltDirection = {-1, 1};      // 1 (right), or -1 (left)
 
     void Start()
     {
         StartCoroutine(SpawnPumpkin());
     }
 
-    IEnumerator SpawnPumpkin(){
-        while (true){
-            spawnRate = tile.m_MinSpeed/2; // Belt speed can change
+    IEnumerator SpawnPumpkin() {
+        while (true) {
+            spawnRate = tiles[0].m_MinSpeed/2; // Belt speed can change
             yield return new WaitForSeconds(1/spawnRate);
             Pumpkin.PumpkinType pumpkinType = validTypes[Random.Range(0, validTypes.Length)];
             GameObject go;
@@ -30,10 +31,12 @@ public class PumpkinSpawner : MonoBehaviour
                 pumpkin = orangePumpkinPrefabs[Random.Range(0, orangePumpkinPrefabs.Length)];
             }
             // print("spawn type "+pumpkinType);
-            go = Instantiate(pumpkin, transform.position, Quaternion.identity);
+
+            int randomSpawn = Random.Range(0, spawnPositions.Length);
+            go = Instantiate(pumpkin, spawnPositions[randomSpawn].position, Quaternion.identity);
             go.GetComponent<Pumpkin>().ChangePumpkinType(pumpkinType, false);
-            go.GetComponent<Pumpkin>().direction = beltDirection;
-            go.GetComponent<Pumpkin>().tile = tile;
+            go.GetComponent<Pumpkin>().direction = beltDirection[randomSpawn];
+            go.GetComponent<Pumpkin>().tile = tiles[randomSpawn];
         }
     }
 }
