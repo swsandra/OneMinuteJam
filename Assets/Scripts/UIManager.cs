@@ -15,13 +15,14 @@ public class UIManager : MonoBehaviour
 
     [Header("MultiplierUI")]
     [SerializeField] TMP_Text multiplierText;
+    [SerializeField] GameObject multiplier;
+    [SerializeField] GameObject multiplierChildren;
     [SerializeField] int multiplierInitialSize;
     [SerializeField] int multiplierIncrement;
     float multiplierH;
     float multiplierS;
     float multiplierV;
-
-
+    int direction = 1;
 
     [Header("Game Over UI")]
     [SerializeField] TMP_Text finalScoreText;
@@ -50,6 +51,12 @@ public class UIManager : MonoBehaviour
     }
 
     public void UpdateUIMultiplier(int newMultiplier) {
+        if(newMultiplier == 1) {
+            multiplier.SetActive(false);
+            multiplierChildren.GetComponent<RectTransform>().localRotation = Quaternion.identity;
+        } else {
+            multiplier.SetActive(true);
+        }
         multiplierText.text = "x" + newMultiplier.ToString();
         multiplierText.fontSize = multiplierInitialSize + (newMultiplier-1) * multiplierIncrement;
         multiplierText.color = Color.HSVToRGB(multiplierH, (newMultiplier-1) * (multiplierS/4), multiplierV);
@@ -64,4 +71,11 @@ public class UIManager : MonoBehaviour
         maxComboText.text = maxCombo.ToString();
     }
 
+    void Update() {
+        if(multiplierText.text == "x5"){
+            if(multiplierChildren.GetComponent<RectTransform>().eulerAngles.z > 30 && multiplierChildren.GetComponent<RectTransform>().eulerAngles.z < 330)
+                direction*=-1;
+            multiplierChildren.GetComponent<RectTransform>().Rotate(new Vector3(0,0,2*direction));
+        }
+    }
 }

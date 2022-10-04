@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Player : MonoBehaviour
 {
@@ -9,11 +10,17 @@ public class Player : MonoBehaviour
     [SerializeField] bool hardMode;
     [SerializeField] float actionPointDown = -0.2f;
     [SerializeField] float actionPointUp = 0.3f;
+    CinemachineImpulseSource impulse;
+    public bool maxMultiplier = false; 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        impulse = transform.GetComponent<CinemachineImpulseSource>();
+    }
+
+    void shakeCamera() {
+        impulse.GenerateImpulse();
     }
 
     // Update is called once per frame
@@ -39,6 +46,8 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J)) {
             Collider2D col = Physics2D.OverlapPoint(actionPoint.position);  // Check Collision
             if (col && col.GetComponent<Pumpkin>().interactable) {
+                if(maxMultiplier)
+                    shakeCamera();
                 col.GetComponent<Pumpkin>().Carve();
                 col.GetComponent<Pumpkin>().interactable = false;
                 }
@@ -46,6 +55,8 @@ public class Player : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.K)) {
             Collider2D col = Physics2D.OverlapPoint(actionPoint.position);  // Check Collision
             if (col && col.GetComponent<Pumpkin>().interactable) {
+                if(maxMultiplier)
+                    shakeCamera();
                 col.GetComponent<Pumpkin>().Lit();
                 col.GetComponent<Pumpkin>().interactable = false;
             }
@@ -53,6 +64,8 @@ public class Player : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.L)) {
             Collider2D col = Physics2D.OverlapPoint(actionPoint.position);  // Check Collision
             if (col && col.GetComponent<Pumpkin>().interactable) {
+                if(maxMultiplier)
+                    shakeCamera();
                 col.GetComponent<Pumpkin>().Explode();
                 col.GetComponent<Pumpkin>().interactable = false;
             }

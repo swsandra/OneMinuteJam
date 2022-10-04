@@ -24,6 +24,7 @@ public class Pumpkin : MonoBehaviour
     [SerializeField] AudioClip lightSound;
     [SerializeField] AudioClip wrongSound;
     [SerializeField] AudioClip explosionSound;
+    [SerializeField] GameObject candle;
 
     float leftLimit;
     float rightLimit;
@@ -65,6 +66,7 @@ public class Pumpkin : MonoBehaviour
         } else if (pumpkinType == PumpkinType.Unlit && newType == PumpkinType.Lit){ // Lit pumpkin
             spriteRenderer.sprite = LitSprite;
             pumpkinType = PumpkinType.Lit;
+            candle.SetActive(true);
         }
     }
 
