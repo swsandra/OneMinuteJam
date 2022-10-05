@@ -125,6 +125,8 @@ public class GameManager : MonoBehaviour
     [ContextMenu("Game Over")]
     IEnumerator GameOverCoroutine() {
         player.GetComponent<PlayerController>().enabled = false;
+        pumpkinSpawner.SetActive(false);
+        gameUICanvas.SetActive(false);
         UIManager.instance.UpdateGameOverScreenScore(score, carvedPumpkins, litPumpkins, explodedPumpkins, missedPumpkins, maxCombo);
         yield return new WaitForSeconds(1);
         FindObjectOfType<CameraScript>().ZoomToPlayer();
@@ -137,8 +139,6 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(false);
         FindObjectOfType<CameraScript>().ZoomOut();
         yield return new WaitForSeconds(2f);
-        pumpkinSpawner.SetActive(false);
-        gameUICanvas.SetActive(false);
         gameOverScreen.SetActive(true);
     }
 }

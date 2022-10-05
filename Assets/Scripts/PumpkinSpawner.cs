@@ -20,7 +20,7 @@ public class PumpkinSpawner : MonoBehaviour
 
     IEnumerator DoubleRateCoroutine() {
         yield return new WaitForSeconds(44.77f);
-        spawnRate /= 2;
+        spawnRate /= 1.5f;
     }
 
     IEnumerator SpawnPumpkin() {

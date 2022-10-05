@@ -13,12 +13,16 @@ public class LightsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spriteLight1.transform.Rotate(new Vector3(0,0,2));
-        spriteLight2.transform.Rotate(new Vector3(0,0,2));
+        spriteLight1.eulerAngles += new Vector3(0,0,20) * Time.deltaTime;
+        spriteLight2.eulerAngles += new Vector3(0,0,20) * Time.deltaTime;
+        // spriteLight1.transform.Rotate(new Vector3(0,0,2));
+        // spriteLight2.transform.Rotate(new Vector3(0,0,2));
         if(spotLight1.localRotation.eulerAngles.z > 210 || spotLight1.localRotation.eulerAngles.z < 150)
             direction*=-1;
-        spotLight1.transform.Rotate(new Vector3(0,0,2*direction));
-        spotLight2.transform.Rotate(new Vector3(0,0,2*-direction));
+        spotLight1.eulerAngles += new Vector3(0,0,20*direction) * Time.deltaTime;
+        spotLight2.eulerAngles += new Vector3(0,0,20*-direction) * Time.deltaTime;
+        // spotLight1.transform.Rotate(new Vector3(0,0,2*-direction));
+        // spotLight2.transform.Rotate(new Vector3(0,0,2*-direction));
 
         
     }
