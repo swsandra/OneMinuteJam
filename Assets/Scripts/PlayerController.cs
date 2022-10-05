@@ -34,16 +34,12 @@ public class PlayerController : MonoBehaviour
         if (hardMode && Input.GetAxisRaw("Vertical") > 0f) {
             // Change sprite to back
             GetComponent<Animator>().SetBool("facingDown", false);
-            // Debug.Log(Input.GetAxisRaw("Vertical"));
-
             // move actionPoint up
             actionPoint.localPosition = new Vector2(0, actionPointUp);
         }
         else if (hardMode && Input.GetAxisRaw("Vertical") < 0f) {
             // Change sprite to front
             GetComponent<Animator>().SetBool("facingDown", true);
-            // Debug.Log(Input.GetAxisRaw("Vertical"));
-            
             // move actionPoint down
             actionPoint.localPosition = new Vector2(0, actionPointDown);
 

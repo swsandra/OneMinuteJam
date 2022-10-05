@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameUICanvas;
     [SerializeField] GameObject pumpkinSpawner;
     [SerializeField] Transform player;
-    [SerializeField] GameObject lights;
+    [SerializeField] GameObject spotLights;
+    [SerializeField] GameObject spriteLights;
 
     float beatTime = 0.5357f;
 
@@ -44,7 +45,9 @@ public class GameManager : MonoBehaviour
             comboMultiplier = value;
             if (comboMultiplier == 5 ) {
                 player.GetComponent<PlayerController>().maxMultiplier = true;
-                lights.SetActive(true);
+                spriteLights.SetActive(true);
+            } else if (comboMultiplier == 4) {
+                spotLights.SetActive(true);
             }
             UIManager.instance.UpdateUIMultiplier(comboMultiplier);
         }
@@ -92,7 +95,8 @@ public class GameManager : MonoBehaviour
         combo = 0;
         ComboMultiplier = 1;
         player.GetComponent<PlayerController>().maxMultiplier = false;
-        lights.SetActive(false);
+        spotLights.SetActive(false);
+        spriteLights.SetActive(false);
         missedPumpkins++;
     }
 

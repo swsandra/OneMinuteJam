@@ -15,6 +15,12 @@ public class PumpkinSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnPumpkin());
+        StartCoroutine(DoubleRateCoroutine());
+    }
+
+    IEnumerator DoubleRateCoroutine() {
+        yield return new WaitForSeconds(44.77f);
+        spawnRate /= 2;
     }
 
     IEnumerator SpawnPumpkin() {
