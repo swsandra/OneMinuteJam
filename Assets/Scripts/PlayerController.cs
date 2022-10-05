@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] Transform actionPoint;
     [Header("HardMode")]
@@ -21,6 +21,10 @@ public class Player : MonoBehaviour
 
     void shakeCamera() {
         impulse.GenerateImpulse();
+    }
+
+    public void EndExplosion() {
+        Destroy(gameObject);
     }
 
     // Update is called once per frame

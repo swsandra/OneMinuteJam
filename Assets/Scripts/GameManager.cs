@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         set {
             comboMultiplier = value;
             if (comboMultiplier == 5 ) {
-                player.GetComponent<Player>().maxMultiplier = true;
+                player.GetComponent<PlayerController>().maxMultiplier = true;
                 lights.SetActive(true);
             }
             UIManager.instance.UpdateUIMultiplier(comboMultiplier);
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
     public void missPumpkin() {
         combo = 0;
         ComboMultiplier = 1;
-        player.GetComponent<Player>().maxMultiplier = false;
+        player.GetComponent<PlayerController>().maxMultiplier = false;
         lights.SetActive(false);
         missedPumpkins++;
     }
@@ -115,9 +115,25 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1);
             Time--;
         }
+        StartCoroutine(GameOverCoroutine());
+    }
+        
+    [ContextMenu("Game Over")]
+    IEnumerator GameOverCoroutine() {
+        player.GetComponent<PlayerController>().enabled = false;
         UIManager.instance.UpdateGameOverScreenScore(score, carvedPumpkins, litPumpkins, explodedPumpkins, missedPumpkins, maxCombo);
+        yield return new WaitForSeconds(1);
+        FindObjectOfType<CameraScript>().ZoomToPlayer();
+        yield return new WaitForSeconds(2);
+        player.GetComponent<Animator>().Play("Cry");
+        yield return new WaitForSeconds(1);
+        player.GetComponent<Animator>().Play("Explosion");
+        player.localScale = new Vector3(2,2,2);
+        yield return new WaitForSeconds(0.5f);
+        player.gameObject.SetActive(false);
+        FindObjectOfType<CameraScript>().ZoomOut();
+        yield return new WaitForSeconds(2f);
         pumpkinSpawner.SetActive(false);
-        // TODO: poner animacion de llorando y explotando, luego hacer lo de abajo
         gameUICanvas.SetActive(false);
         gameOverScreen.SetActive(true);
     }

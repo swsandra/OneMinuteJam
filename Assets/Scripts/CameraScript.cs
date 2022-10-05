@@ -15,8 +15,8 @@ public class CameraScript : MonoBehaviour
 
     [ContextMenu("ZoomOut")]
     public void ZoomOut() {
-        StartCoroutine(.5f.Tweeng((p)=>transform.position=p, transform.position, new Vector3(0,0,-10)));
-        StartCoroutine(1f.Tweeng((s)=>GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize=s, 1f, 3f));
+        StartCoroutine(2f.Tweeng((p)=>transform.position=p, transform.position, new Vector3(0,0,-10)));
+        StartCoroutine(2f.Tweeng((s)=>GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize=s, 1f, 3f));
 
     }
 }
