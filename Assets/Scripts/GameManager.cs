@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour
         player.GetComponent<PlayerController>().enabled = false;
         pumpkinSpawner.SetActive(false);
         gameUICanvas.SetActive(false);
+        player.transform.GetChild(0).gameObject.SetActive(false);
         UIManager.instance.UpdateGameOverScreenScore(score, carvedPumpkins, litPumpkins, explodedPumpkins, missedPumpkins, maxCombo);
         yield return new WaitForSeconds(1);
         FindObjectOfType<CameraScript>().ZoomToPlayer();
