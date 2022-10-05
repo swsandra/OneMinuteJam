@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -73,6 +74,12 @@ public class PlayerController : MonoBehaviour
                 col.GetComponent<Pumpkin>().Explode();
                 col.GetComponent<Pumpkin>().interactable = false;
             }
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene("Title");
+        }
+        else if (Input.GetKeyDown(KeyCode.R)) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
