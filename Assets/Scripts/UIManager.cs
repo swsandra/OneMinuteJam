@@ -75,7 +75,7 @@ public class UIManager : MonoBehaviour
         if(multiplierText.text == "x5"){
             if(multiplierChildren.GetComponent<RectTransform>().eulerAngles.z > 30 && multiplierChildren.GetComponent<RectTransform>().eulerAngles.z < 330)
                 direction*=-1;
-            multiplierChildren.GetComponent<RectTransform>().Rotate(new Vector3(0,0,2*direction));
+            multiplierChildren.GetComponent<RectTransform>().eulerAngles += new Vector3(0,0,2*direction);
         }
     }
 }
